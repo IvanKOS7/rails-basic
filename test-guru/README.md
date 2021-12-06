@@ -21,4 +21,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Real-world concepts:
+1.User (Select and passes tests)
+2.Admin (Create tests and redact)
+3.Test (is a test with different parameters, interact with users through tests)
+4.Statistic (Admin see the result of completed surveys by parameters)
