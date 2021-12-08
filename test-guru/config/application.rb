@@ -13,7 +13,7 @@ module TestGuru
     config.time_zone = 'Asia/Barnaul'
     config.i18n.available_locales = [:en, :ru]
     config.default_locale = :ru
-
+    #config.version
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
