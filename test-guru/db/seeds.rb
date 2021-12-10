@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Test.create(title: 'Ruby test', level: 3)
+Test.create(title: 'Rails test', level: 7)
+Test.create(title: 'SQL test', level: 4)
+
+Answer.create(correct: 'I do not understand')
