@@ -5,20 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.create(title: 'English')
-Test.create(title: 'What is your level of English?', level: 2, categories_id: 1)
-Question.create(body: 'We _______ a lovely three weeks in the south of Spain last year.', tests_id: 1)
-Answer.create(answer: 'spent',correct: true, questions_id: 1)
-Answer.create(answer: 'passed',correct: false, questions_id: 1)
-Answer.create(answer: 'took',correct: false, questions_id: 1)
-Answer.create(answer: 'did',correct: false, questions_id: 1)
-Question.create(body: 'Suzie and John are planning to get married and _______ a lot of children.', tests_id: 1)
-Answer.create(answer: 'have',correct: true, questions_id: 2)
-Answer.create(answer: 'bring',correct: false, questions_id: 2)
-Answer.create(answer: 'get',correct: false, questions_id: 2)
-Answer.create(answer: 'make',correct: false, questions_id: 2)
-Question.create(body: "Please don't forget to ring me when you _______ home", tests_id: 1)
-Answer.create(answer: 'will get',correct: true, questions_id: 3)
-Answer.create(answer: 'get',correct: false, questions_id: 3)
-Answer.create(answer: 'are going to get',correct: false, questions_id: 3)
-Answer.create(answer: 'are getting',correct: false, questions_id: 3)
+cat = Category.create([
+  {title: 'English'}
+  ])
+test = Test.create([
+  {title: 'What is your level of English?', level: 2, category_id: cat[0].id}
+])
+questions = Question.create([
+
+{body: 'We _______ a lovely three weeks in the south of Spain last year.', test_id: test[0].id},
+{body: 'Suzie and John are planning to get married and _______ a lot of children.', test_id: test[0].id},
+{body: "Please don't forget to ring me when you _______ home", test_id: test[0].id}
+])
+
+
+answers = Answer.create([
+  {answer: 'spent',correct: true, question_id: questions[0].id},
+  {answer: 'passed',correct: false, question_id: questions[0].id},
+  {answer: 'took',correct: false, question_id: questions[0].id},
+  {answer: 'did',correct: false, question_id: questions[0].id},
+  {answer: 'have',correct: true, question_id: questions[1].id},
+  {answer: 'bring',correct: false, question_id: questions[1].id},
+  {answer: 'get',correct: false, question_id: questions[1].id},
+  {answer: 'make',correct: false, question_id: questions[1].id},
+  {answer: 'will get',correct: true, question_id: questions[2].id},
+  {answer: 'get',correct: false, question_id: questions[2].id},
+  {answer: 'are going to get',correct: false, question_id: questions[2].id},
+  {answer: 'are getting',correct: false, question_id: questions[2].id}
+])
