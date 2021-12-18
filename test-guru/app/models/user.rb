@@ -1,15 +1,11 @@
 class User < ApplicationRecord
-  attr_reader :user_tests_arr
+  has_and_belongs_to_many :tests, join_table: "user_tests"
 
-  def take_test
-    @user_tests_arr = []
-    pp Test.select(:id, :title).inspect
-    puts "Select Test id from list"
-    choice = gets.chomp.to_i
-    @user_tests_arr << Test.find_by(id: choice)
+  def find_user_tests_by_level(level)
+    pp tests.find_by("tests.level = ?", level)
   end
 
-  def users_test(level)
-    pp Test.find_by("level = ?", level)
+  def run_test
+    tests << Test.all.first
   end
 end

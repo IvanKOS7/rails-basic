@@ -45,6 +45,4 @@ answers = Answer.create([
   {answer: '5',correct: true, question_id: questions[4].id},
   {answer: '6',correct: false, question_id: questions[4].id},
 ])
-users = User.create([{name: "Creator"},
-  {name: "Just user"}
-  ])
+user1 = User.create([{name: "First"}])
