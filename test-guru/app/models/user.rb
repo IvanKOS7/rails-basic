@@ -9,6 +9,5 @@ class User < ApplicationRecord
   def run_test
     tests << Test.all.first
   end
-
-  scope :find_user_tests_by_level, -> (level) { Test.where("tests.level = ?", level) }
+  
 end
