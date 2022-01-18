@@ -8,7 +8,7 @@ class Answer < ApplicationRecord
   private
 
      def right_answers_count
-        errors.add(:answer, "The number of answers cannot be more than 4. Answers full.") if Answer.where("question_id= ?", self.question_id).count >= 4
+        errors.add(:answer, "The number of answers cannot be more than 4. Answers full.") if self.question.answers.count >= 4
      end
 
 end

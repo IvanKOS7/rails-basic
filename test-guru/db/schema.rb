@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_01_17_180515) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
-    t.index ["title"], name: "index_tests_on_title", unique: true
+    t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
   end
 
   create_table "tests_users", id: false, force: :cascade do |t|
