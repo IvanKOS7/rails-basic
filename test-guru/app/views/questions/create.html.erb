@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+     <h1>Created? <%= @new_test_question.inspect %></h1>
+
+    <table border="1">
+    <thead>
+        <tr>
+            <th colspan="2">New question</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Body</td>
+          <td><%= params[:body]%> </td>
+        </tr>
+        <tr>
+          <td>Test_id</td>
+          <td><%= params[:test_id]%></td>
+        </tr>
+    </tbody>
+</table>
+
+
+  </body>
+</html>
