@@ -1,42 +1,55 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %[index, create, destroy, destroyed]
+  before_action :find_test, only: [:index, :create]
+  before_action :find_question, only: [:show, :destroy]
+
 
   def index
-      render json: { test_questions: @test.questions }
+    render json: { test_questions: @test.questions }
   end
 
   def show
-    begin
-    render json: { questions: Question.find(params[:id]) }
-    rescue => e
-      render plain: "Couldn't find Question"
-    end
+    render json: { questions: Question.all }
   end
 
-  def all_questions
-    render json: { all_questions: Question.all }
+  def new
   end
 
   def create
-    @params = params
-    @new_test_question = @test.questions.create(body: params[:body]).save
-    render "questions/create"
+    question = @test.questions.new(question_params)
+    if question.save
+      redirect_to action: "index"
+    else
+       render plain: "Invalid params"
+    end
   end
 
   def destroy
-    render "questions/destroy"
+    destroy_question = @question.destroy(params[:id])
+    if question.destroy
+      render plain: "OK"
+    else
+      render plain: "NO"
+    end
   end
 
-  def destroyed
-    @destroy_question = Question.find(params[:id]).destroy
-    render "questions/destroy"
-  end
 
   private
+
+  def rescue_with_question_not_found
+    render plain: 'Question not found'
+  end
+
+  def question_params
+    #permit
+     params.require(:question).permit(:body)
+  end
 
   def find_test
     @test = Test.find(params[:test_id])
   end
 
+  def find_question
+    @question = Question.find(params[:id])
+  end
 end

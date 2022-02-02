@@ -10,13 +10,10 @@ class Test < ApplicationRecord
   def self.tests_categories_sort(category_name)
     all_test_with_category.order(title: :desc).where("categories.title like ? ", category_name).pluck(:title)
   end
-  def test_q
-    self.questions
 
-  end
   scope :simple_level, -> { where(level: 0..1) }
   scope :midle_level,  -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :all_test_with_category, -> { Test.joins(:category) }
-  #scope :que, -> {self.questions}
+
 end

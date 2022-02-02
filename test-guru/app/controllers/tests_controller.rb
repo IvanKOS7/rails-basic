@@ -5,8 +5,7 @@ class TestsController < ApplicationController
   end
 
   def show
-    render json: { test: Test.where('id=?', params[:id]) }
+    render json: { test: Test.find(params[:id]) }
   end
-
 
 end

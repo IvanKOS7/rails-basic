@@ -5,13 +5,12 @@
     <title></title>
   </head>
   <body>
-    <h1>Create questions!!!For test: #<%= params[:test_id] %></h1>
+    <h1>Create questions!!!</h1>
 
-    <form action="create" method="post">
-      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-      Body: <input type="text" name="body" /><br />
-  <input type="submit" value="Create" />
-
+    <form action="/tests/<%= params[:test_id] %>/questions" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    Body: <input type="text" name="question[body]" /><br />
+    <input type="submit" value="Create" />
 
   </form>
   </body>
