@@ -9,7 +9,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -26,7 +25,6 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @test = Test.find(@question.test_id)
   end
 
   def update
@@ -51,7 +49,7 @@ class QuestionsController < ApplicationController
 
   def question_params
     #permit
-     params.require(:question).permit(:body, :test_id)
+     params.require(:question).permit(:body)
   end
 
   def find_test
