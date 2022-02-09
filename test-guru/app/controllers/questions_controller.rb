@@ -1,43 +1,36 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: [:new, :index, :create]
-  before_action :find_question, only: [:update, :edit, :show, :destroy]
+  before_action :find_test, only: [:index, :create]
+  before_action :find_question, only: [:show, :destroy]
 
 
   def index
-    @test_questions = @test.questions
+    render json: { test_questions: @test.questions }
   end
 
   def show
+    render json: { questions: Question.all }
   end
 
   def new
-    @question = @test.questions.new
   end
 
   def create
-    @question = @test.questions.new(question_params)
-    if @question.save
-      redirect_to @test
+    question = @test.questions.new(question_params)
+    if question.save
+      redirect_to action: "index"
     else
-      render :new
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @question.update(question_params)
-      redirect_to @question
-    else
-      render :edit
+       render plain: "Invalid params"
     end
   end
 
   def destroy
-    @question.destroy
-    redirect_to test_path(@question.test_id)
+    destroy_question = @question.destroy(params[:id])
+    if question.destroy
+      render plain: "OK"
+    else
+      render plain: "NO"
+    end
   end
 
 
@@ -59,6 +52,4 @@ class QuestionsController < ApplicationController
   def find_question
     @question = Question.find(params[:id])
   end
-
-
 end
