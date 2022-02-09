@@ -1,2 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Create questions!!!</h1>
 
-<%= render 'form' %>
+    <form action="/tests/<%= params[:test_id] %>/questions" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    Body: <input type="text" name="question[body]" /><br />
+    <input type="submit" value="Create" />
+
+  </form>
+  </body>
+</html>
