@@ -1,6 +1,8 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_and_belongs_to_many :users
+  #has_and_belongs_to_many :users
+  has_many :test_passages
+  has_many :users, through: :test_passages
   has_many :questions
 
   validates :title, presence: true, uniqueness: {scope: :level}
@@ -15,5 +17,7 @@ class Test < ApplicationRecord
   scope :midle_level,  -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :all_test_with_category, -> { Test.joins(:category) }
+
+
 
 end
