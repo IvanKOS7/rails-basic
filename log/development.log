@@ -32721,3 +32721,110 @@ Processing by TestsController#show as HTML
 Completed 200 OK in 32ms (Views: 0.6ms | ActiveRecord: 14.7ms | Allocations: 6989)
 
 
+Started GET "/tests" for 127.0.0.1 at 2022-02-12 02:18:46 +0700
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (undefined local variable or method `elementary' for TestsHelper:Module):
+  
+app/helpers/tests_helper.rb:3:in `<module:TestsHelper>'
+app/helpers/tests_helper.rb:1:in `<main>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/tests_controller.rb:1:in `<main>'
+Started GET "/tests" for 127.0.0.1 at 2022-02-12 03:56:16 +0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (22.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:10
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 24]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 27]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 23]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 30]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 32]]
+  ↳ app/views/tests/_test.html.erb:5
+  Rendered collection of tests/_test.html.erb [5 times] (Duration: 22.1ms | Allocations: 9099)
+  Rendered tests/index.html.erb within layouts/application (Duration: 155.5ms | Allocations: 18468)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 196.0ms | Allocations: 45748)
+Completed 200 OK in 207ms (Views: 197.1ms | ActiveRecord: 103.7ms | Allocations: 51709)
+
+
+Started GET "/tests" for 127.0.0.1 at 2022-02-12 03:59:04 +0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (1.0ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:10
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 24]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 27]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 23]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 30]]
+  ↳ app/views/tests/_test.html.erb:5
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 32]]
+  ↳ app/views/tests/_test.html.erb:5
+  Rendered collection of tests/_test.html.erb [5 times] (Duration: 16.2ms | Allocations: 6972)
+  Rendered tests/index.html.erb within layouts/application (Duration: 43.3ms | Allocations: 11127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 14930)
+Completed 200 OK in 55ms (Views: 19.4ms | ActiveRecord: 31.6ms | Allocations: 18002)
+
+
+Started GET "/tests/24/questions/new" for 127.0.0.1 at 2022-02-12 04:00:48 +0700
+Processing by QuestionsController#new as HTML
+  Parameters: {"test_id"=>"24"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:56:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered questions/_form.html.erb (Duration: 8.6ms | Allocations: 2984)
+  Rendered questions/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3290)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 7139)
+Completed 200 OK in 58ms (Views: 18.3ms | ActiveRecord: 10.6ms | Allocations: 11938)
+
+
+Started GET "/tests/24" for 127.0.0.1 at 2022-02-12 04:00:51 +0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:45:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 24]]
+  ↳ app/views/tests/_test.html.erb:5
+  Rendered tests/_test.html.erb (Duration: 6.2ms | Allocations: 1197)
+  [1m[36mQuestion Load (1.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = $1[0m  [["test_id", 24]]
+  ↳ app/views/questions/_test_questions.html.erb:1
+  Rendered questions/_test_questions.html.erb (Duration: 6.5ms | Allocations: 1476)
+  Rendered tests/show.html.erb within layouts/application (Duration: 15.8ms | Allocations: 3375)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 7275)
+Completed 200 OK in 29ms (Views: 19.9ms | ActiveRecord: 5.4ms | Allocations: 8508)
+
+
+Started GET "/questions/14" for 127.0.0.1 at 2022-02-12 04:00:53 +0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:60:in `find_question'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4116)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 1.2ms | Allocations: 5426)
+
+
