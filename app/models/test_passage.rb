@@ -30,19 +30,14 @@ class TestPassage < ApplicationRecord
   end
 
   def percent
-    @percent = self.correct_questions.fdiv(self.test_right_answers) * 100
+    self.correct_questions.fdiv(self.test.questions.count) * 100
   end
 
   def test_passed?
-    self.percent
-    @percent >= PASSED_PERCENT
+    self.percent >= PASSED_PERCENT
   end
-
-
-  def test_right_answers
-    self.test.questions.map.count
-  end
-
+  #test_right_answers - этот метод вообще не нужен был, я просто неправильно считал
+  #количество вопросов, 
 
   private
 

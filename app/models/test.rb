@@ -12,6 +12,7 @@ class Test < ApplicationRecord
     all_test_with_category.order(title: :desc).where("categories.title like ? ", category_name).pluck(:title)
   end
 
+
   scope :simple_level, -> { where(level: 0..1) }
   scope :midle_level,  -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
