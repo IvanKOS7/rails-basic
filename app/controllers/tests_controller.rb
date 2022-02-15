@@ -1,13 +1,18 @@
 class TestsController < ApplicationController
 
-  before_action :find_test, only: [:destroy, :edit, :show, :update]
+  before_action :find_test, only: [:destroy, :edit, :show, :update, :start]
+  before_action :set_user, only: [:start]
 
   def index
     @tests = Test.all
   end
 
   def show
+  end
 
+  def start
+    @user.tests.push(@test)
+    redirect_to @user.test_passage(@test)
   end
 
   def new
@@ -49,4 +54,7 @@ private
     params.require(:test).permit(:title, :level, :category_id)
   end
 
+  def set_user
+    @user = User.first
+  end
 end
