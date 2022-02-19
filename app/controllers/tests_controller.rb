@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-
+  before_action :autheticate_user!
   before_action :find_test, only: [:destroy, :edit, :show, :update, :start]
   before_action :set_user, only: [:start]
 
@@ -11,8 +11,9 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    #@user.tests.push(@test)
+    @current_user.tests.push(@test)
+    redirect_to @current_user.test_passage(@test)
   end
 
   def new

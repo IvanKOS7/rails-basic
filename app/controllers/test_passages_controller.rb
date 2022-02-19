@@ -3,6 +3,8 @@ class TestPassagesController < ApplicationController
    before_action :set_test_passage, only: [:show, :update, :result]
 
    def show
+     #когда запускаем тест пасажнужно менять @test_passage.user = current_user.id
+     # остается найти метод запуска
    end
 
    def result

@@ -7,7 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to tests_path
+      session[:user_id] = @user.id
+      autheticate_user!
+      redirect_to tests_path if logged_in?
     else
       render :new
     end
@@ -19,4 +21,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
+
+
 end

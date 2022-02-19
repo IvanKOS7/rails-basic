@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
   get 'users/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+  delete :sessions, to: 'sessions#destroy'
   resources :users, only: :create
+  resources :sessions, except: :index
 
 
   resources :tests do
