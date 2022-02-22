@@ -1,22 +1,25 @@
 class SessionsController < ApplicationController
 
-  #before_action :save_domain, only: :create
+  before_action :set_cookie_last_path
 
   def new
+
   end
 
   def create
+
     user = User.find_by(email: params[:email])
 
     if user&.authenticate(params[:password])
-      #user.authenticate(params[:password]) if user != nil
-      session[:user_id] = user.id #rails method
-      # last domain
-      redirect_to tests_path
+      session[:user_id] = user.id
+      redirect_to cookies[:last_path]
+      cookies.delete :last_path
+      #render :new
     else
-      flash.now[:alert] = "Please, check fields"
-      render :new
+      flash.now[:alert] = ApplicationHelper::FLASH_HELPER[:alert]
+      redirect_to login_path
     end
+
   end
 
   def destroy
@@ -24,12 +27,13 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
-  # def save_domain
-  #   cookies.permanent[:]
-  #   byebug
-  #   if logged_in?
-  #     redirect_to domains_arr.last
-  #     #https://www.allaboutcookies.org/cookies/
-  #   end
-  # end
+  def set_cookie_last_path
+    cookies[:last_path] = {
+    value: request.path,
+    expires: 1.hour.from_now
+    }
+   end
+
+
+
 end

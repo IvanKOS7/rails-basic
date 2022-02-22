@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::Base
 
 
-  helper_method :current_user, :logged_in?, :exit
+  helper_method :current_user, :logged_in?
 
 
-  def exit
 
-  end
   private
 
   def autheticate_user!
@@ -22,4 +20,10 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user.present?
   end
+
+
+  # def referer
+  #   cookies[:path] = request.path
+  #   @all_domains << cookies[:path]
+  # end
 end

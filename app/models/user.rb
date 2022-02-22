@@ -2,8 +2,8 @@
 
 class User < ApplicationRecord
 
-  EMAIL_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
-  validates :email, format: { with: EMAIL_REGEXP }
+
+  validates :email, format: { with:  URI::MailTo::EMAIL_REGEXP }, uniqueness: true
   #include Auth
 
   has_many :test_passages
