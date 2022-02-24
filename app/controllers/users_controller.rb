@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      autheticate_user!
+      autheticate_user!#запускаю, чтобы после создания нового пользователя логиниться сразу
       redirect_to tests_path if logged_in?
     else
       render :new

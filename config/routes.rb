@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get :login, to: 'sessions#new'
   delete :sessions, to: 'sessions#destroy'
   resources :users, only: :create
-  resources :sessions, except: :index
+  resources :sessions, only: :create
 
 
   resources :tests do

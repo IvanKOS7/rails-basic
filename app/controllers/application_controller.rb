@@ -1,14 +1,12 @@
 class ApplicationController < ActionController::Base
 
-
-  helper_method :current_user, :logged_in?
-
-
+  helper_method :current_user, :logged_in?, :set_cookie_last_path
 
   private
 
   def autheticate_user!
      unless current_user
+       set_cookie_last_path
        redirect_to login_path
      end
   end
@@ -21,9 +19,9 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-
-  # def referer
-  #   cookies[:path] = request.path
-  #   @all_domains << cookies[:path]
-  # end
+  def set_cookie_last_path
+    cookies[:last_path] = {
+    value: request.path
+    }
+  end
 end
