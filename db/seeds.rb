@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 cat = Category.create([
   {title: 'English'},
   {title: 'Ruby'},
@@ -15,7 +16,7 @@ test = Test.create([
   {title: 'Ruby basics', level: 3, category_id: cat[1].id},
   {title: 'Rails basics', level: 4, category_id: cat[2].id},
   {title: 'Ruby advanced', level: 7, category_id: cat[1].id},
-  {title: 'Ruby middle', level: 5, category_id: cat[1].id}
+  {title: Faker::Movie.title, level: 5, category_id: cat[1].id}
 
 ])
 questions = Question.create([
@@ -24,7 +25,8 @@ questions = Question.create([
 {body: 'Suzie and John are planning to get married and _______ a lot of children.', test_id: test[0].id},
 {body: "Please don't forget to ring me when you _______ home", test_id: test[0].id},
 {body: "Select RIGHT data-types in Ruby", test_id: test[1].id},
-{body: "Hello.length - choose the correct amount that will be returned", test_id: test[1].id}
+{body: "Hello.length - choose the correct amount that will be returned", test_id: test[1].id},
+{body: Faker::Movie.quote, test_id: test[1].id}
 ])
 
 
@@ -45,4 +47,3 @@ answers = Answer.create([
   {answer: '5',correct: true, question_id: questions[4].id},
   {answer: '6',correct: false, question_id: questions[4].id},
 ])
-user1 = User.create([{name: "First"}])

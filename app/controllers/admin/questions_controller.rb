@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
 
   before_action :find_test, only: [:new, :index, :create]
   before_action :find_question, only: [:update, :edit, :show, :destroy]
@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to @test
+      redirect_to admin_test_path
     else
       render :new
     end
@@ -59,6 +59,4 @@ class QuestionsController < ApplicationController
   def find_question
     @question = Question.find(params[:id])
   end
-
-
 end
