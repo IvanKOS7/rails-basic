@@ -56,7 +56,8 @@ ActiveRecord::Schema.define(version: 2022_03_01_161009) do
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "author", default: "Unknown"
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "author"
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 

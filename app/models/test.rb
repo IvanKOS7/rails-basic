@@ -1,5 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
+  belongs_to :author, class_name: "Admin",
+                      foreign_key: "admin_id"
   #честно говоря не понял разницу между delete_all
   has_many :test_passages, dependent: :destroy
 
@@ -12,6 +14,10 @@ class Test < ApplicationRecord
 #\A[+]?\d+\z - regexp
   def self.tests_categories_sort(category_name)
     all_test_with_category.order(title: :desc).where("categories.title like ? ", category_name).pluck(:title)
+  end
+
+  def author_change
+
   end
 
 
