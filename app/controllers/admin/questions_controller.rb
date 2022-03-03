@@ -18,7 +18,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to admin_test_path
+      redirect_to admin_tests_path
     else
       render :new
     end
