@@ -1,8 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author, class_name: "Admin",
-                      foreign_key: "admin_id"
-  #честно говоря не понял разницу между delete_all
+  belongs_to :author, class_name: "User"
   has_many :test_passages, dependent: :destroy
 
   has_many :users, through: :test_passages
@@ -11,15 +9,9 @@ class Test < ApplicationRecord
   validates :title, presence: true, uniqueness: {scope: :level}
   validates :level, numericality: { greater_than_or_equal_to: 0 }
 
-#\A[+]?\d+\z - regexp
   def self.tests_categories_sort(category_name)
     all_test_with_category.order(title: :desc).where("categories.title like ? ", category_name).pluck(:title)
   end
-
-  def author_change
-
-  end
-
 
   scope :simple_level, -> { where(level: 0..1) }
   scope :midle_level,  -> { where(level: 2..4) }

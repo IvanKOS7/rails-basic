@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 2022_03_01_161009) do
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "admin_id"
-    t.index ["admin_id"], name: "author"
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["user_id"], name: "author_id"
   end
 
   create_table "users", force: :cascade do |t|
