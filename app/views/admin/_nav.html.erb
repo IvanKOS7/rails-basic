@@ -1,0 +1,10 @@
+<div class="nav nav-admin">
+  <p>TestGuru Admin Panel</p>
+  <a class="nav-admin user"><%= link_to 'Home', admin_tests_path %></a>
+  <a href="/gurus/sign_up" class="active"</a>SignUp</a></a>
+  <a class="nav-admin user">
+    <% if user_signed_in? %>
+    <p>Welcome, <b> <%= current_user.email %></b></p>
+    <%= link_to 'Exit', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "active" %>
+  <% end %> </a>
+</div>

@@ -1,0 +1,20 @@
+
+<table>
+  <tr>
+    <th>Title<th>
+    <th>Level<th>
+    <th>Questions amount<th>
+    <th colspan="3">Actions</th>
+  </tr>
+  <%= render @test %>
+</table>
+<table>
+  <tr>
+    <th>Questions<th>
+    <th colspan="3">Actions<th>
+  </tr>
+  <%= render 'admin/questions/test_questions', resource: @test.questions %>
+<table/>
+
+<%= link_to 'Edit Test', edit_admin_test_path %><br/>
+<%= link_to 'Back', admin_tests_path %>

@@ -1,0 +1,8 @@
+<% resource.each do |test_question| %>
+  <tr>
+    <td> <%= test_question.body %></td>
+    <td> <%= link_to 'Show', admin_question_path(test_question) %></td>
+    <td> <%= link_to 'Edit', edit_admin_question_path(test_question) %></td>
+    <td> <%= link_to 'Delete', admin_question_path(test_question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

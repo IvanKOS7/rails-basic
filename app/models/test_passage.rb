@@ -36,9 +36,7 @@ class TestPassage < ApplicationRecord
   def test_passed?
     self.percent >= PASSED_PERCENT
   end
-  #test_right_answers - этот метод вообще не нужен был, я просто неправильно считал
-  #количество вопросов, 
-
+  
   private
 
   def before_validation_set_first_question

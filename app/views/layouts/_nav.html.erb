@@ -1,11 +1,11 @@
 <div class="topnav">
   <p>TestGuru</p>
   <a class="active" href="/tests">Home</a>
-  <a href="/signup" class="active"</a>SignUp</a></a>
-  <a href="/login" class= "active">Login</a>
+  <a href="/gurus/sign_up" class="active"</a>SignUp</a></a>
+  <a href="/gurus/login" class= "active">Login</a>
   <a class="nav user">
-    <% if logged_in? %>
-    <p class="nav user">Welcome, <b> <%= current_user.email %></b></p>
-    <%= link_to 'Exit', sessions_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "active" %>
+    <% if user_signed_in? %>
+    <p>Welcome, <b> <%= current_user.email %></b></p>
+    <%= link_to 'Exit', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "active" %>
   <% end %> </a>
 </div>
