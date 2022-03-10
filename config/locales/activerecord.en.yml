@@ -1,0 +1,9 @@
+en:
+  models:
+    test:
+
+  attributes:
+    title: "Title"
+  errors:
+    messages:
+      blank: "Title can't be blank"
