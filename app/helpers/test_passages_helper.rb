@@ -1,11 +1,7 @@
 module TestPassagesHelper
 
-  def good_result
-    content_tag(:h2, "Good", class: "green")
-  end
-
-  def bad_result
-    content_tag(:h2, "Test Failed(", class: "red")
+  def result_handler(resource)
+    resource.test_passed? ? content_tag(:h2, "Good", class: "green") : content_tag(:h2, "Test Failed(", class: "red")
   end
 
 end

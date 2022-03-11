@@ -1,5 +1,6 @@
-<h2>Correct Answers: <%= @test_passage.correct_questions %> </h2>
-<h2>Total Questions: <%= @test_passage.test.questions.count %> </h2>
-<h2>Percents: <%= @test_passage.percent  %>%</h2>
-<h2>Result: <%= @test_passage.test_passed? ? good_result : bad_result  %></h2>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<h2><%= t('.correct', correct: @test_passage.correct_questions) %></h2>
+<h2><%= t('.total_questions', questions_count: @test_passage.test.questions.count) %></h2>
+<h2><%= t('.percent', percent: @test_passage.percent) %></h2>
+<h2> <%= t('.result') %> <%= result_handler(@test_passage)  %></h2>
 <%= link_to 'Back', tests_path %>

@@ -1,9 +1,10 @@
 en:
-  models:
-    test:
-
-  attributes:
-    title: "Title"
-  errors:
-    messages:
-      blank: "Title can't be blank"
+  activerecord:
+    models:
+      test: "Test"
+    attributes:
+      test:
+        title: "Title"
+    errors:
+      messages:
+        blank: "can't be blank"

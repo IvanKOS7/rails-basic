@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_locale
   helper_method :set_cookie_last_path
+
+  def default_url_options
+    { lang: I18n.locale }
+  end
 
   private
 
@@ -15,4 +19,7 @@ class ApplicationController < ActionController::Base
     resource.admin? ? admin_tests_path : root_path
   end
 
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+  end
 end
