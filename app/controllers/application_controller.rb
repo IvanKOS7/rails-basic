@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :set_cookie_last_path
 
   def default_url_options
-    { lang: I18n.locale }
+     { :lang => !I18n.default_locale.eql?(I18n.locale) ? I18n.locale : nil }
   end
 
   private

@@ -59,6 +59,8 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+    select:
+      prompt: "Categories"
     label:
       test:
         title: "Title"
