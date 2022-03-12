@@ -1,2 +1,97 @@
 ru:
   hello: "Привет"
+  hello_flash: "ака"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions_amount: "Количество вопросов"
+      actions: "Действия"
+    test:
+      start: "Пройти тест"
+
+  test_passages:
+    result:
+      header: "Тест %{title} был завершен"
+      correct: "Правильных ответов: %{correct}"
+      total_questions: "Всего вопросов: %{questions_count}"
+      percent: "Процент выполнения: %{percent}%"
+      result: "Ваш результат: "
+    show:
+      header: "Сейчас вы проходите тест: %{title}"
+      questions: "Всего вопросов: %{questions}"
+      question: "Вопрос номер: %{question}"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+  #У меня очень интересно отработал гем 'devise-i18n', он мне почему-то сам перевел подсказку
+  #Пытался думать как это получилось, так и не понял     
+    select:
+      prompt: "FGBRGBRTBRBV"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  admin:
+    tests:
+      form:
+        back: "Назад"
+      create:
+        success: "Тест был успешно создан"
+      edit:
+        edit: "Редактировать Тест"
+      new:
+        create: 'Создать новый Тест'
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions_amount: "Количество вопросов"
+        actions: "Действия"
+        new_test: "Создать новый Тест"
+      show:
+        header: "Тест %{title}"
+        title: "Название"
+        level: "Уровень"
+        questions_amount: "Количество вопросов"
+        actions: "Действия"
+      test:
+        delete: "Удалить тест"
+        edit: "Редактировать"
+        show_test: "Посмотреть тест"
+        new_question: "Создать новый вопрос"
+    nav:
+      greeter: "Приветствуем, %{email}"
+      home: "Главная"
+      login: "Войти"
+      switch: "Кабинет юзера"
+      exit: "Выйти"
+      admin_panel: "Кабинет Админа"
+
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  layouts:
+    nav:
+      greeter: "Приветствуем, %{email}"
+      home: "Главная"
+      login: "Войти"
+      sign_up: "Рега"
+      exit: "Выйти"

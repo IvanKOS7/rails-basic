@@ -22,7 +22,7 @@ class Admin::AnswersController < Admin::BaseController
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
-      redirect_to admin_answer_url
+      redirect_to [:admin, @question]
     else
       render :new
     end
@@ -40,7 +40,7 @@ class Admin::AnswersController < Admin::BaseController
   # DELETE /answers/1 or /answers/1.json
   def destroy
     @answer.destroy
-    redirect_to @answer.question
+    redirect_to [:admin, @answer.question]
   end
 
   private

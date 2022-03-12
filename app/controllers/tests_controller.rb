@@ -5,7 +5,7 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    flash.now[:notice] = "Hello, #{current_user.first_name}"
+    #flash.now[:notice] = t(:hello_flash)
   end
 
   def start
