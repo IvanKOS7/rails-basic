@@ -13,11 +13,13 @@
   </head>
 
   <body>
-    <%= render "layouts/nav" %>
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <%= render "shared/nav" %>
+      </nav>
       <div class="container">
         <%= render 'shared/flash' %>
         <%= yield %>
       </div>
-    <%= render "layouts/footer" %>
+    <%= render "shared/footer" %>
   </body>
 </html>

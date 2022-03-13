@@ -11,9 +11,14 @@
   </head>
 
   <body>
-    <%= render "admin/nav" %>
-    <%= render 'shared/flash' %>
 
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <%= render "shared/nav" %>
+    </nav>
+
+    <%= render 'shared/flash' %>
     <%= yield %>
+    <%= render "shared/footer" %>
+
   </body>
 </html>
