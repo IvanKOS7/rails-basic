@@ -1,6 +1,51 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<h2><%= t('.correct', correct: @test_passage.correct_questions) %></h2>
-<h2><%= t('.total_questions', questions_count: @test_passage.test.questions.count) %></h2>
-<h2><%= t('.percent', percent: @test_passage.percent) %></h2>
-<h2> <%= t('.result') %> <%= result_handler(@test_passage)  %></h2>
-<%= link_to 'Back', tests_path %>
+
+<div class="row justify-content-center mt-4">
+
+	  <div class="col col-md-10">
+	<h2><%= t('.header', title: @test_passage.test.title) %></h2>
+
+	<table class="table">
+	    <tbody>
+	    <tr>
+	        <td>
+						<%= t('.correct') %>
+	            <button type="button" class="btn btn-success m-r-sm"><%= @test_passage.correct_questions %></button>
+
+	        </td>
+	    </tr>
+	    <tr>
+	        <td>
+						  <%= t('.total_questions') %>
+	            <button type="button" class="btn btn-primary m-r-sm"><%=@test_passage.test.questions.count%></button>
+	        </td>
+	    </tr>
+			<tr>
+				<td>
+				   	<%= t('.result') %>
+						<%= result_handler(@test_passage) %>
+				</td>
+			</tr>
+	    <tr>
+	        <td>
+						<div class="panel-content">
+								<div class="demo-v-spacing">
+
+												<div class="d-flex align-items-center">
+														<div class="flex-1">
+																<span class="h6 m-0 fw-900"><%= t('.percent', percent: @test_passage.percent) %></span>
+																<div class="progress mt-1 progress-xs">
+																		<div class="progress-bar progress-bar-striped progress-bar-animated bg-succes-600" role="progressbar" style="width: <%= @test_passage.percent %>%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+
+	        </td>
+	    </tr>
+	    </tbody>
+	</table>
+	<%= button_to 'Back', tests_path, method: :get, class: "btn btn-primary m-r-sm" %>
+
+	</div>
+</div>

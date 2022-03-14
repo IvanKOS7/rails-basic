@@ -15,8 +15,8 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} был завершен"
-      correct: "Правильных ответов: %{correct}"
-      total_questions: "Всего вопросов: %{questions_count}"
+      correct: "Правильных ответов:"
+      total_questions: "Всего вопросов:"
       percent: "Процент выполнения: %{percent}%"
       result: "Ваш результат: "
     show:
