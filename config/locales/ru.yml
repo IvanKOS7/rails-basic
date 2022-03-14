@@ -15,8 +15,8 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} был завершен"
-      correct: "Правильных ответов: %{correct}"
-      total_questions: "Всего вопросов: %{questions_count}"
+      correct: "Правильных ответов:"
+      total_questions: "Всего вопросов:"
       percent: "Процент выполнения: %{percent}%"
       result: "Ваш результат: "
     show:
@@ -30,7 +30,7 @@ ru:
         create: "Создать тест"
         update: "Обновить тест"
   #У меня очень интересно отработал гем 'devise-i18n', он мне почему-то сам перевел подсказку
-  #Пытался думать как это получилось, так и не понял     
+  #Пытался думать как это получилось, так и не понял
     select:
       prompt: "FGBRGBRTBRBV"
     label:
@@ -67,13 +67,6 @@ ru:
         edit: "Редактировать"
         show_test: "Посмотреть тест"
         new_question: "Создать новый вопрос"
-    nav:
-      greeter: "Приветствуем, %{email}"
-      home: "Главная"
-      login: "Войти"
-      switch: "Кабинет юзера"
-      exit: "Выйти"
-      admin_panel: "Кабинет Админа"
 
 
   shared:
@@ -83,6 +76,14 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    nav:
+      greeter: "Приветствуем, %{email}"
+      home: "Главная"
+      login: "Войти"
+      switch: "Переключить кабинет"
+      exit: "Выйти"
+      admin_panel: "Кабинет Админа"
+      sign_up: "Регистрация"
 
   tests_mailer:
     completed_test:

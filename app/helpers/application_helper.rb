@@ -11,7 +11,12 @@ module ApplicationHelper
     link_to 'GITHUB', "https://github.com/#{author}/#{repo}", target: "_blank"
   end
 
-  def flash_helper(key)
-    flash.now[key] = FLASH_HELPER[key]
-  end
+  def flash_helper(level)
+    case level
+        when "notice" then "alert alert-primary"
+        when "success" then "alert alert-success"
+        when "error" then "alert alert-error"
+        when "alert" then "alert alert-danger"
+    end
+end
 end
