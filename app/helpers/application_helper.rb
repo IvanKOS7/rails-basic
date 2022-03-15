@@ -1,6 +1,9 @@
 module ApplicationHelper
 
-  FLASH_HELPER = { :alert => "Please, check fields " }.freeze
+  FLASH_HELPER = { "alert" => "alert-danger",
+                   "notice" => "alert-success",
+                  #добавить еще флешей
+                                             }.freeze
 
   def current_year
     year = Time.new.year
@@ -12,11 +15,6 @@ module ApplicationHelper
   end
 
   def flash_helper(level)
-    case level
-        when "notice" then "alert alert-primary"
-        when "success" then "alert alert-success"
-        when "error" then "alert alert-error"
-        when "alert" then "alert alert-danger"
-    end
-end
+    FLASH_HELPER[level]
+  end
 end

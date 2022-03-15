@@ -12,6 +12,7 @@ ru:
     test:
       start: "Пройти тест"
 
+
   test_passages:
     result:
       header: "Тест %{title} был завершен"
@@ -23,17 +24,17 @@ ru:
       header: "Сейчас вы проходите тест: %{title}"
       questions: "Всего вопросов: %{questions}"
       question: "Вопрос номер: %{question}"
+      gist_question: "Создать Gist Вопроса"
     gist:
       success: "Gist успешно сохранен!"
-      failure: "Во время сохранения gist произошла ошибка"  
+      failure: "Во время сохранения gist произошла ошибка"
+      description: "gerGRREGERGER"
 
   helpers:
     submit:
       test:
         create: "Создать тест"
         update: "Обновить тест"
-  #У меня очень интересно отработал гем 'devise-i18n', он мне почему-то сам перевел подсказку
-  #Пытался думать как это получилось, так и не понял
     select:
       prompt: "FGBRGBRTBRBV"
     label:
@@ -70,6 +71,10 @@ ru:
         edit: "Редактировать"
         show_test: "Посмотреть тест"
         new_question: "Создать новый вопрос"
+    gists:
+      index:
+        question: "Вопрос"
+        user_email: "Email Пользователя"    
 
 
   shared:

@@ -8,3 +8,5 @@ ru:
     errors:
       messages:
         blank: "не может быть пустым"
+  services:
+    description: "A question about  from TestGuru"      

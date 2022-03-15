@@ -8,12 +8,12 @@ class GitHubClient
 	end
 
 	def create_gist(params)
-		#передаем в гистст юрл вроде
 		@http_client.post('gists') do |request|
-      request.headers['Authorization'] = "token #{ACCESS_TOKEN}"
+       request.headers['Authorization'] = "token #{ACCESS_TOKEN}"
 			request.headers['Content-Type'] = 'application/json'
 			request.body = params.to_json
-		end
+		await @http_client.request('POST /gists', params)
+
 	end
 
 	def setup_http_client
