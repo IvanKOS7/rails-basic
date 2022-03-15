@@ -28,8 +28,6 @@ gem 'devise', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-#random
-gem 'faker'
 
 #LOCALIZATION
 gem 'rails-i18n', '~> 6.0.0'
@@ -40,6 +38,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 #FRONT
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0'
+
+#NETWORKING
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

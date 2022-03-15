@@ -23,6 +23,9 @@ ru:
       header: "Сейчас вы проходите тест: %{title}"
       questions: "Всего вопросов: %{questions}"
       question: "Вопрос номер: %{question}"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"  
 
   helpers:
     submit:
