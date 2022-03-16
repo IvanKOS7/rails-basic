@@ -1,6 +1,6 @@
 
 <tbody>
   <td> <%= link_to 'Github Gist', gist.url %> </td>
-  <td><%= link_to gist.question.body.slice(0..25) + "...", admin_question_path(gist.question) %></td>
+  <td><%= link_to gist.question.body.truncate(25), admin_question_path(gist.question) %></td>
 	<td><%= gist.user.email %></td>
 </tbody>
