@@ -53,6 +53,11 @@ en:
       header: "Current test: %{title}"
       questions: "Total questions: %{questions}"
       question: "Question #%{question}"
+      gist_question: "Gist Question"
+    gist:
+      success: "Gist succesffuly saved!"
+      failure: "Error:"
+
 
   helpers:
     submit:
@@ -102,6 +107,10 @@ en:
       switch: "Switch To User"
       exit: "Logout"
       admin_panel: "Admin Panel"
+    gists:
+      index:
+        question: "Question"
+        user_email: "User Email"      
 
 
   shared:

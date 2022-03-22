@@ -1,7 +1,7 @@
 
   <% flash.each do |key, message| %>
 
-  <div class="<%= flash_helper(key)%>">
-    <%= content_tag :p, message %>
+  <div class="alert <%= flash_helper(key) %>">
+    <%= content_tag :p, message.html_safe %>
   </div>
   <% end %>

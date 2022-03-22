@@ -21,5 +21,7 @@ module TestGuru
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #не грузит каталог внутри каталогв
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end

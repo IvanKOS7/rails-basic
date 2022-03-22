@@ -28,8 +28,6 @@ gem 'devise', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-#random
-gem 'faker'
 
 #LOCALIZATION
 gem 'rails-i18n', '~> 6.0.0'
@@ -41,9 +39,17 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0'
 
+#NETWORKING
+#gem 'faraday', "~> 0.8"
+#API CLIENTS
+gem "octokit"
+#
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #ENV
+  gem 'dotenv-rails'
 
 end
 
