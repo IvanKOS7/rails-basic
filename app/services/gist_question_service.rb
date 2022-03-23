@@ -22,7 +22,7 @@ class GistQuestionService
   end
 
   def success?
-    self.client.last_response != nil
+    self.client.last_response.status.eql?(201)
   end
 
   private
