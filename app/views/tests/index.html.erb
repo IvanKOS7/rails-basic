@@ -1,14 +1,17 @@
 
 
-    <h2> <%= t('.header') %></h2>
-    <table class="table table-primary table-striped table-responsive">
-      <thead>
-        <tr class="table-active">
-          <td><%= t('.title') %></td>
-          <td><%= t('.level') %></td>
-          <td scope="col"><%= t('.questions_amount') %></td>
-          <td scope="col"><%= t('.actions') %></td>
-        </tr>
-      </thead>
-      <%= render @tests %>
-    </table>
+<h2> <%= t('.header') %></h2>
+<table class="table table-primary">
+  <thead>
+    <tr>
+      <td  class="sort-by-title pointer"><%= t('.title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </td>
+      <td><%= t('.level') %></td>
+      <td scope="col"><%= t('.questions_amount') %></td>
+      <td scope="col"><%= t('.actions') %></td>
+    </tr>
+  </thead>
+  <%= render @tests %>
+</table>
