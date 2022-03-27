@@ -100,6 +100,8 @@ en:
         edit: "Edit"
         show_test: "Show Test"
         new_question: "Create New Test"
+      form-inline:
+        submit: "Ok"
     nav:
       greeter: "Hello, %{email}"
       home: "Home"
@@ -110,7 +112,7 @@ en:
     gists:
       index:
         question: "Question"
-        user_email: "User Email"      
+        user_email: "User Email"
 
 
   shared:
