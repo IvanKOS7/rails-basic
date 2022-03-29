@@ -71,10 +71,12 @@ ru:
         edit: "Редактировать"
         show_test: "Посмотреть тест"
         new_question: "Создать новый вопрос"
+      form-inline:
+        submit: "Ok"
     gists:
       index:
         question: "Вопрос"
-        user_email: "Email Пользователя"    
+        user_email: "Email Пользователя"
 
 
   shared:

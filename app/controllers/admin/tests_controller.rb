@@ -1,6 +1,7 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :find_test, only: [:destroy, :edit, :show, :update]
+  before_action :set_tests, only: [:index, :update_inline]
+  before_action :find_test, only: [:destroy, :edit, :show, :update, :update_inline]
 
 
   def index
@@ -14,10 +15,15 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
   def create
-    #у меня здесь не было ассоциации, пришлось делать
-    #я просто думал использовать старую ассоциацию тестов, она ведь не используется, админ тесты не проходит
-    #и автора я просто добавлял как объект relation в тест
     @test = current_user.created_tests.new(test_params)
     if @test.save
       redirect_to admin_tests_path
@@ -31,7 +37,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_tests_path
     else
       render :edit
     end
@@ -42,6 +48,10 @@ class Admin::TestsController < Admin::BaseController
     redirect_to admin_tests_path
   end
 private
+
+  def set_tests
+    @tests = Test.all
+  end
 
   def find_test
     @test = Test.find(params[:id])
