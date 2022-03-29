@@ -26,3 +26,5 @@ production:
   <<: *default
   #database: db/production.sqlite3 old
   database: db/test_guru_production
+  username:
+  password:  <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
