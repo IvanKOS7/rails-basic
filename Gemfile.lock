@@ -84,7 +84,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     devise (4.8.1)
       bcrypt (~> 3.0)
@@ -139,7 +139,7 @@ GEM
       thor (>= 0.14, < 2.0)
     launchy (2.5.0)
       addressable (~> 2.7)
-    letter_opener (1.8.0)
+    letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -158,6 +158,8 @@ GEM
     multipart-post (2.1.1)
     nio4r (2.5.8)
     nokogiri (1.13.3-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     octicons (17.0.0)
     octicons_helper (17.0.0)
@@ -271,6 +273,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
