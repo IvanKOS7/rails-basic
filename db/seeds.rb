@@ -6,11 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-cat = Category.delete([
-  {title: 'English'},
-  {title: 'Ruby'},
-  {title: 'Rails'}
-  ])
+
 cat = Category.create([
   {title: 'English'},
   {title: 'Ruby'},
