@@ -31,19 +31,11 @@ questions = Question.create([
 
 
 answers = Answer.create([
-  {answer: 'spent',correct: true, question_id: questions[0].id},
-  {answer: 'passed',correct: false, question_id: questions[0].id},
-  {answer: 'took',correct: false, question_id: questions[0].id},
-  {answer: 'did',correct: false, question_id: questions[0].id},
-  {answer: 'have',correct: true, question_id: questions[1].id},
-  {answer: 'bring',correct: false, question_id: questions[1].id},
-  {answer: 'get',correct: false, question_id: questions[1].id},
-  {answer: 'make',correct: false, question_id: questions[1].id},
-  {answer: 'will get',correct: true, question_id: questions[2].id},
-  {answer: 'get',correct: false, question_id: questions[2].id},
-  {answer: 'are going to get',correct: false, question_id: questions[2].id},
-  {answer: 'are getting',correct: false, question_id: questions[2].id},
-  {answer: 'Numeric, boolean, UTF-8',correct: false, question_id: questions[3].id},
-  {answer: '5',correct: true, question_id: questions[4].id},
-  {answer: '6',correct: false, question_id: questions[4].id},
+  {title: 'spent',correct: true, question_id: questions[0].id},
+  {title: 'passed',correct: false, question_id: questions[0].id},
+  {title: 'took',correct: false, question_id: questions[0].id},
+  {title: 'did',correct: false, question_id: questions[0].id},
+  {title: 'have',correct: true, question_id: questions[1].id},
+  {title: 'bring',correct: false, question_id: questions[1].id},
+  
 ])
