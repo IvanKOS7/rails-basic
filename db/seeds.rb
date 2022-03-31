@@ -14,11 +14,11 @@ cat = Category.create([
   {title: 'Rails'}
   ])
 test = Test.create([
-  {title: 'What is your level of English?', level: 2, category_id: cat[0].id, author: User.last.id },
-  {title: 'Ruby basics', level: 3, category_id: cat[1].id, author: User.last.id },
-  {title: 'Rails basics', level: 4, category_id: cat[2].id, author: User.last.id },
-  {title: 'Ruby advanced', level: 7, category_id: cat[1].id, author: User.last.id },
-  {title: Faker::Movie.title, level: 5, category_id: cat[1].id, author: User.last.id }
+  {title: 'What is your level of English?', level: 2, category_id: cat[0].id, author: User.last },
+  {title: 'Ruby basics', level: 3, category_id: cat[1].id, author: User.last },
+  {title: 'Rails basics', level: 4, category_id: cat[2].id, author: User.last },
+  {title: 'Ruby advanced', level: 7, category_id: cat[1].id, author: User.last },
+  {title: Faker::Movie.title, level: 5, category_id: cat[1].id, author: User.last }
 
 ])
 questions = Question.create([
