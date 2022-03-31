@@ -31,11 +31,11 @@ questions = Question.create([
 
 
 answers = Answer.create([
-  {title: 'spent',correct: true, question_id: questions[0].id},
-  {title: 'passed',correct: false, question_id: questions[0].id},
-  {title: 'took',correct: false, question_id: questions[0].id},
-  {title: 'did',correct: false, question_id: questions[0].id},
-  {title: 'have',correct: true, question_id: questions[1].id},
-  {title: 'bring',correct: false, question_id: questions[1].id},
-  
+  {body: 'spent',correct: true, question_id: questions[0].id},
+  {body: 'passed',correct: false, question_id: questions[0].id},
+  {body: 'took',correct: false, question_id: questions[0].id},
+  {body: 'did',correct: false, question_id: questions[0].id},
+  {body: 'have',correct: true, question_id: questions[1].id},
+  {body: 'bring',correct: false, question_id: questions[1].id},
+
 ])
