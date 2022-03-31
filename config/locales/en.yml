@@ -120,6 +120,8 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    footer:
+        feedback: "Обратная связь"      
 
   tests_mailer:
     completed_test:

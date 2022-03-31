@@ -1,4 +1,5 @@
 <%= link_to "Test Guru", root_path, class: 'navbar-brand h6' %>
+
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
@@ -25,8 +26,8 @@
         <%= link_to 'en', lang: 'en'%> |
         <%= link_to 'ru', lang: 'ru' %>
       </li>
-    <%= link_to t('.login'), new_session_path(resource_name), class: "btn btn-outline-primary me-2" %>
-    <%= link_to t('.sign_up'), new_registration_path(resource_name), class: "btn btn-outline-primary me-2"%>
+    <%= link_to t('.login'), new_user_session_path, class: "btn btn-outline-primary me-2" %>
+    <%= link_to t('.sign_up'), new_user_registration_path, class: "btn btn-outline-primary me-2"%>
     </ul>
     </div>
 <% end %>

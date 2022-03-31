@@ -94,6 +94,8 @@ ru:
       exit: "Выйти"
       admin_panel: "Кабинет Админа"
       sign_up: "Регистрация"
+    footer:
+      feedback: "Обратная связь"  
 
   tests_mailer:
     completed_test:
