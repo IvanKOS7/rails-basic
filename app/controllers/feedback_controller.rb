@@ -5,7 +5,7 @@ class FeedbackController < ApplicationController
     before_action :find_admin, only: [:create]
 
   def index
-    
+
   end
 
   def create
@@ -20,8 +20,8 @@ class FeedbackController < ApplicationController
       render :index
     else
       FeedbackMailer.feedback_send(message, user_email, @admin).deliver_now
-      flash.now[:success] = "Y"
-      redirect_to root_path
+      flash.now[:success] = "Message succesffuly created"
+      render :index
     end
   end
 
