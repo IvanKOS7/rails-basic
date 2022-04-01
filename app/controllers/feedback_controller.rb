@@ -20,7 +20,7 @@ class FeedbackController < ApplicationController
       render :index
     else
       FeedbackMailer.feedback_send(message, user_email, @admin).deliver_now
-      flash.now[:success] = "Message succesffuly created"
+      flash.now[:notice] = "Message succesffuly created"
       render :index
     end
   end
