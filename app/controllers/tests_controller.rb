@@ -10,8 +10,7 @@ class TestsController < ApplicationController
 
   def start
     if @test.questions.empty?
-      flash.now[:notice] = t(:hello_flash)
-      render :index
+      redirect_to root_path, alert: "Watch it, mister!"
     else
       current_user.tests.push(@test)
       redirect_to current_user.test_passage(@test)
