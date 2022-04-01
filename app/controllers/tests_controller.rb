@@ -10,9 +10,7 @@ class TestsController < ApplicationController
 
   def start
     if @test.questions.empty?
-
-      redirect_to tests_path
-      flash.now[:alert] = "Could't start test without questions"
+      { notice: "GHHHH"}
     else
       current_user.tests.push(@test)
       redirect_to current_user.test_passage(@test)
