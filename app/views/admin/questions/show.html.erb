@@ -1,19 +1,15 @@
-<div class="row align-items-start">
-<div class="col col-6 col-md-6 mt-2">
-  <p>Вопрос: <%= @question.body %></p>
-  <p><%= link_to 'Edit', edit_admin_question_path(@question) %></p>
-  <p><%= link_to 'Back', admin_tests_path %></p>
-</div>
+<h2>Show question</h2>
+<table>
 
+  <tr>
+    <th>Question</th>
+    <th>Actions</th>
 
-</div>
-
-
-
-
-
+  </tr>
+<%= render @question %>
+</table>
 <h2>Answers</h2>
 <ol>
   <%= render @question.answers %>
 </ol>
-<p><%= link_to 'New', new_admin_question_answer_path(@question) %></p>
+<td><%= link_to 'Back', admin_test_path(@question.test) %></td>
