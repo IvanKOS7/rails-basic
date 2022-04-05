@@ -1,11 +1,11 @@
 class FeedbackController < ApplicationController
 
 
-  skip_before_action :authenticate_user!, only: [ :index, :create ]
+  skip_before_action :authenticate_user!, only: [ :new, :create ]
     before_action :find_admin, only: [:create]
 
-  def index
-
+  def new
+    #@feedback = FeedbackMailer.new
   end
 
   def create
@@ -17,11 +17,11 @@ class FeedbackController < ApplicationController
     end
     if message.empty?
       flash.now[:alert] = "Message can't be blank"
-      render :index
+      render :new
     else
       FeedbackMailer.feedback_send(message, user_email, @admin).deliver_now
       flash.now[:notice] = "Message succesffuly created"
-      render :index
+      render :new
     end
   end
 

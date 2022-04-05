@@ -9,7 +9,12 @@ class TestPassagesController < ApplicationController
    end
 
    def update
-     @test_passage.accept!(params[:answer_ids])
+     if params[:answer_ids]
+       @test_passage.accept!(params[:answer_ids])
+     else
+       @test_passage.except!
+     end
+
      if @test_passage.completed?
        TestsMailer.completed_test(@test_passage).deliver_now
        redirect_to result_test_passage_path(@test_passage)

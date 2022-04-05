@@ -9,13 +9,8 @@ Rails.application.routes.draw do
   # resources :sessions, only: :create
   root to: 'tests#index'
 
-  # get :feedback, to: 'application#feedback'
-  # post :feedback, to:
-  # member do
-  #   post :feedback
-  # end
 
-  resources :feedback
+  resources :feedback, only: [:new, :create]
 
   resources :tests, only: :index do
     member do

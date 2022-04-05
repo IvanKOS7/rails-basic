@@ -22,9 +22,7 @@ class GistQuestionService
   end
 
   def success?
-    if self.client.last_response && self.client.last_response.status.eql?(201)
-
-    end
+    self.client.last_response && self.client.last_response.status.eql?(201)
   end
 
   private

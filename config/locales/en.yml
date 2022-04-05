@@ -32,6 +32,11 @@
 en:
   hello: "Hello"
 
+  feedback:
+    new:
+      submit: "Send message"
+      message: "Your message"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -54,6 +59,7 @@ en:
       questions: "Total questions: %{questions}"
       question: "Question #%{question}"
       gist_question: "Gist Question"
+      next: "Next"
     gist:
       success: "Gist succesffuly saved!"
       failure: "Error:"
@@ -121,7 +127,7 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     footer:
-        feedback: "Обратная связь"      
+        feedback: "Обратная связь"
 
   tests_mailer:
     completed_test:

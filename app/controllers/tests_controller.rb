@@ -4,17 +4,12 @@ class TestsController < ApplicationController
 
 
   def index
-    @tests = Test.all
-    #flash.now[:notice] = t(:hello_flash)
+    @tests = Test.tests_with_questions
   end
 
   def start
-    if @test.questions.empty?
-      redirect_to root_path, alert: "Watch it, mister!"
-    else
-      current_user.tests.push(@test)
-      redirect_to current_user.test_passage(@test)
-    end
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
 private
