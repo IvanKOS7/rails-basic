@@ -6,7 +6,7 @@ ru:
     new:
       submit: "Отправить"
       message: "Ваше сообщение"
-      
+
 
   tests:
     index:
@@ -36,6 +36,8 @@ ru:
       success: "Gist успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
       description: "gerGRREGERGER"
+    update:
+      failure: "Сначала выберите варианты ответа"
 
   helpers:
     submit:
@@ -67,6 +69,7 @@ ru:
         questions_amount: "Количество вопросов"
         actions: "Действия"
         new_test: "Создать новый Тест"
+        publication: "Публикация"
       show:
         header: "Тест %{title}"
         title: "Название"
@@ -78,6 +81,7 @@ ru:
         edit: "Редактировать"
         show_test: "Посмотреть тест"
         new_question: "Создать новый вопрос"
+        publish: "Опубликовать"
       form-inline:
         submit: "Ok"
     gists:

@@ -11,10 +11,10 @@ class User < ApplicationRecord
          :trackable,
          :confirmable
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: "Test"
-  has_many :gists
+  has_many :gists, dependent: :destroy
 
 
   def find_user_tests_by_level(level)

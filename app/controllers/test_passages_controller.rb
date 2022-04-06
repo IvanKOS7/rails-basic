@@ -9,10 +9,10 @@ class TestPassagesController < ApplicationController
    end
 
    def update
-     if params[:answer_ids]
+     if @test_passage.answer_choosed?(params[:answer_ids])
        @test_passage.accept!(params[:answer_ids])
      else
-       @test_passage.except!
+       flash.now[:alert] = t('.failure')
      end
 
      if @test_passage.completed?

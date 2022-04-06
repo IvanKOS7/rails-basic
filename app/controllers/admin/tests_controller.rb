@@ -1,11 +1,11 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :set_tests, only: [:index, :update_inline]
-  before_action :find_test, only: [:destroy, :edit, :show, :update, :update_inline]
+  before_action :set_tests, only: [:index, :update_inline, :public_test]
+  before_action :find_test, only: [:destroy, :edit, :show, :update, :update_inline, :public_test]
 
 
   def index
-    @tests = Test.all
+    @tests = Test.all.sort
   end
 
   def show
@@ -14,6 +14,16 @@ class Admin::TestsController < Admin::BaseController
   def new
     @test = Test.new
   end
+
+  def public_test
+    if @test.questions.empty? || @test.questions.any? {|q| q.answers.empty? }
+      redirect_to admin_tests_path, alert: "Unpublished"
+    else
+      @test.update(test_params)
+      redirect_to admin_tests_path, notice: "Successfuly published"
+    end
+  end
+
 
   def update_inline
     if @test.update(test_params)
@@ -47,6 +57,7 @@ class Admin::TestsController < Admin::BaseController
     @test.destroy
     redirect_to admin_tests_path
   end
+
 private
 
   def set_tests
@@ -58,7 +69,7 @@ private
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :published)
   end
 
 end

@@ -13,8 +13,8 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def except!
-    save!
+  def answer_choosed?(answer_ids)
+    !answer_ids.nil?
   end
 
   def completed?

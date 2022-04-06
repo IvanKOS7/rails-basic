@@ -4,7 +4,7 @@ class TestsController < ApplicationController
 
 
   def index
-    @tests = Test.tests_with_questions
+    @tests = Test.published_tests
   end
 
   def start

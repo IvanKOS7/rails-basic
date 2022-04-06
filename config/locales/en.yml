@@ -44,6 +44,7 @@ en:
       level: "Level"
       questions_amount: "Questions amount"
       actions: "Actions"
+
     test:
       start: "Start"
 
@@ -63,6 +64,8 @@ en:
     gist:
       success: "Gist succesffuly saved!"
       failure: "Error:"
+    update:
+      failure: "Сначала выберите варианты ответа"
 
 
   helpers:
@@ -95,6 +98,7 @@ en:
         questions_amount: "Questions Amount"
         actions: "Actions"
         new_test: "Create New Test"
+        publication: "Publication"
       show:
         header: "Test %{title}"
         title: "Title"
@@ -106,6 +110,7 @@ en:
         edit: "Edit"
         show_test: "Show Test"
         new_question: "Create New Test"
+        publish: "Publish"
       form-inline:
         submit: "Ok"
     nav:
