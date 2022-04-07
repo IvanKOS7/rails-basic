@@ -8,5 +8,7 @@ class Question < ApplicationRecord
 
   def right_answers
      self.answers.correct
-   end
+  end
+
+
 end

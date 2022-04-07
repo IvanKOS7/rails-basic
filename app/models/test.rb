@@ -17,5 +17,7 @@ class Test < ApplicationRecord
   scope :midle_level,  -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :all_test_with_category, -> { Test.joins(:category) }
+  scope :published_tests, -> { where(published: true) }
+
 
 end

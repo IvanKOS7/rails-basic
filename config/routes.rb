@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # resources :sessions, only: :create
   root to: 'tests#index'
 
+
+  resources :feedback, only: [:new, :create]
+
   resources :tests, only: :index do
     member do
       post :start
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
    namespace :admin do
      resources :tests do
        patch :update_inline, on: :member
+       patch :public_test, on: :member
        resources :questions, shallow: true, except: :index do
          resources :answers, shallow: true, except: :index
        end

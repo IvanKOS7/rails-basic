@@ -13,6 +13,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def answer_choosed?(answer_ids)
+    !answer_ids.nil?
+  end
+
   def completed?
     current_question.nil?
   end
@@ -36,7 +40,7 @@ class TestPassage < ApplicationRecord
   def test_passed?
     self.percent >= PASSED_PERCENT
   end
-  
+
   private
 
   def before_validation_set_first_question

@@ -4,8 +4,7 @@ class TestsController < ApplicationController
 
 
   def index
-    @tests = Test.all
-    #flash.now[:notice] = t(:hello_flash)
+    @tests = Test.published_tests
   end
 
   def start

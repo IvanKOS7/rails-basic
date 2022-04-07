@@ -45,6 +45,8 @@ gem "autoprefixer-rails"
 #API CLIENTS
 gem "octokit"
 gem "octicons_helper"
+#random text generator
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,8 +67,6 @@ group :development do
   gem 'spring'
   #open mail in local
   gem 'letter_opener'
-  #random text generator
-  gem 'faker'
 end
 
 group :test do

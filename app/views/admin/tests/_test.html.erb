@@ -11,9 +11,18 @@
                                                    class: 'form-inline-link',
                                                     data: { test_id: test.id } %>
   </td>
+
   <td><%= link_to t('.show_test'), admin_test_path(test) %></td>
   <td>
     <%= link_to t('.delete'), admin_test_path(test), method: :delete, data: { confirm: 'Are you sure?' } %>
   </td>
   <td><%= link_to t('.new_question'), new_admin_test_question_path(test) %></td>
+  <td>
+    <%= form_with model: [:admin, test], url: public_test_admin_test_path(test), class: "form-check form-switch" do |form| %>
+        <%= form.check_box :published, class: 'form-check-input' %>
+        <%= button_tag type: 'submit', class: "btn btn-light" do %>
+          <%= octicon 'paper-airplane', class: 'text-success' %>
+        <% end %>
+    <% end %>
+  </td>
 </tr>

@@ -18,11 +18,15 @@ function countProgress() {
   const questionsContainer = document.querySelector('.questions_counter')
   let questionsAmount = questionsContainer.dataset.questionsAmount
   let questionNumber = questionsContainer.dataset.questionNumber
-  console.log(questionNumber)
+  if (percent(questionNumber, questionsAmount) === 0) {
+    progressBar.setAttribute('style', 'width: 4%')
+    progressBar.textContent = '0%'
+    return
+  }
   progressBar.setAttribute('style', `width: ${percent(questionNumber, questionsAmount)}%`)
   progressBar.textContent = `${percent(questionNumber, questionsAmount)}%`
 }
 
 function percent(arg1, arg2) {
-  return (arg1/arg2) * 100
+  return ((arg1 - 1)/arg2) * 100
 }
