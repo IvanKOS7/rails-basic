@@ -2,6 +2,12 @@ ru:
   hello: "Привет"
   hello_flash: "ака"
 
+  feedback:
+    new:
+      submit: "Отправить"
+      message: "Ваше сообщение"
+
+
   tests:
     index:
       header: "Доступные тесты"
@@ -25,10 +31,13 @@ ru:
       questions: "Всего вопросов: %{questions}"
       question: "Вопрос номер: %{question}"
       gist_question: "Создать Gist Вопроса"
+      next: "Далее"
     gist:
       success: "Gist успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
       description: "gerGRREGERGER"
+    update:
+      failure: "Сначала выберите варианты ответа"
 
   helpers:
     submit:
@@ -60,6 +69,7 @@ ru:
         questions_amount: "Количество вопросов"
         actions: "Действия"
         new_test: "Создать новый Тест"
+        publication: "Публикация"
       show:
         header: "Тест %{title}"
         title: "Название"
@@ -71,6 +81,7 @@ ru:
         edit: "Редактировать"
         show_test: "Посмотреть тест"
         new_question: "Создать новый вопрос"
+        publish: "Опубликовать"
       form-inline:
         submit: "Ok"
     gists:
@@ -94,6 +105,8 @@ ru:
       exit: "Выйти"
       admin_panel: "Кабинет Админа"
       sign_up: "Регистрация"
+    footer:
+      feedback: "Обратная связь"
 
   tests_mailer:
     completed_test:

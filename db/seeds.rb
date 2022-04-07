@@ -6,17 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+
+
 cat = Category.create([
   {title: 'English'},
   {title: 'Ruby'},
   {title: 'Rails'}
   ])
 test = Test.create([
-  {title: 'What is your level of English?', level: 2, category_id: cat[0].id},
-  {title: 'Ruby basics', level: 3, category_id: cat[1].id},
-  {title: 'Rails basics', level: 4, category_id: cat[2].id},
-  {title: 'Ruby advanced', level: 7, category_id: cat[1].id},
-  {title: Faker::Movie.title, level: 5, category_id: cat[1].id}
+  {title: 'What is your level of English?', level: 2, category_id: cat[0].id, author: User.last },
+  {title: 'Ruby basics', level: 3, category_id: cat[1].id, author: User.last },
+  {title: 'Rails basics', level: 4, category_id: cat[2].id, author: User.last },
+  {title: 'Ruby advanced', level: 7, category_id: cat[1].id, author: User.last },
+  {title: Faker::Movie.title, level: 5, category_id: cat[1].id, author: User.last }
 
 ])
 questions = Question.create([
@@ -31,19 +33,11 @@ questions = Question.create([
 
 
 answers = Answer.create([
-  {answer: 'spent',correct: true, question_id: questions[0].id},
-  {answer: 'passed',correct: false, question_id: questions[0].id},
-  {answer: 'took',correct: false, question_id: questions[0].id},
-  {answer: 'did',correct: false, question_id: questions[0].id},
-  {answer: 'have',correct: true, question_id: questions[1].id},
-  {answer: 'bring',correct: false, question_id: questions[1].id},
-  {answer: 'get',correct: false, question_id: questions[1].id},
-  {answer: 'make',correct: false, question_id: questions[1].id},
-  {answer: 'will get',correct: true, question_id: questions[2].id},
-  {answer: 'get',correct: false, question_id: questions[2].id},
-  {answer: 'are going to get',correct: false, question_id: questions[2].id},
-  {answer: 'are getting',correct: false, question_id: questions[2].id},
-  {answer: 'Numeric, boolean, UTF-8',correct: false, question_id: questions[3].id},
-  {answer: '5',correct: true, question_id: questions[4].id},
-  {answer: '6',correct: false, question_id: questions[4].id},
+  {body: 'spent',correct: true, question_id: questions[0].id},
+  {body: 'passed',correct: false, question_id: questions[0].id},
+  {body: 'took',correct: false, question_id: questions[0].id},
+  {body: 'did',correct: false, question_id: questions[0].id},
+  {body: 'have',correct: true, question_id: questions[1].id},
+  {body: 'bring',correct: false, question_id: questions[1].id},
+
 ])

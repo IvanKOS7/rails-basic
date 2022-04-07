@@ -32,6 +32,11 @@
 en:
   hello: "Hello"
 
+  feedback:
+    new:
+      submit: "Send message"
+      message: "Your message"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -39,6 +44,7 @@ en:
       level: "Level"
       questions_amount: "Questions amount"
       actions: "Actions"
+
     test:
       start: "Start"
 
@@ -54,9 +60,12 @@ en:
       questions: "Total questions: %{questions}"
       question: "Question #%{question}"
       gist_question: "Gist Question"
+      next: "Next"
     gist:
       success: "Gist succesffuly saved!"
       failure: "Error:"
+    update:
+      failure: "Сначала выберите варианты ответа"
 
 
   helpers:
@@ -89,6 +98,7 @@ en:
         questions_amount: "Questions Amount"
         actions: "Actions"
         new_test: "Create New Test"
+        publication: "Publication"
       show:
         header: "Test %{title}"
         title: "Title"
@@ -100,6 +110,7 @@ en:
         edit: "Edit"
         show_test: "Show Test"
         new_question: "Create New Test"
+        publish: "Publish"
       form-inline:
         submit: "Ok"
     nav:
@@ -120,6 +131,8 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    footer:
+        feedback: "Обратная связь"
 
   tests_mailer:
     completed_test:

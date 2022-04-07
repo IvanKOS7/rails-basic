@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
-  before_action :authenticate_user!, :set_locale
+  before_action :authenticate_user!, except: [ :feedback ]
+  before_action :set_locale
   helper_method :set_cookie_last_path
 
   def default_url_options
