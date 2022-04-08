@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # resources :sessions, only: :create
   root to: 'tests#index'
 
-
+  resources :badges, only: :index
   resources :feedback, only: [:new, :create]
 
   resources :tests, only: :index do
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    end
 
    namespace :admin do
+     resources :badges
      resources :tests do
        patch :update_inline, on: :member
        patch :public_test, on: :member

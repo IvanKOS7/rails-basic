@@ -7,4 +7,10 @@ module TestsHelper
     TEST_LEVELS[test.level] || :hero
   end
 
+  def show_svg(file)
+    # File.open("app/assets/images/#{path}", "rb") do |file|
+      raw file.read
+    # end
+  end
+
 end

@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: "Test"
   has_many :gists, dependent: :destroy
+  has_many :badges
 
 
   def find_user_tests_by_level(level)

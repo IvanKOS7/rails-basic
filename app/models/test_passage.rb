@@ -3,6 +3,8 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
   before_validation :set_question
+  #include ActiveModel::AttributeMethods
+  #определяем методы атрибутов теста здесь
 
   PASSED_PERCENT = 85.freeze
 
