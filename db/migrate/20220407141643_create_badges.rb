@@ -6,8 +6,9 @@ class CreateBadges < ActiveRecord::Migration[6.1]
       t.string :color
       t.string :label
       t.string :message
-      t.belongs_to :user, foreign_key: true
+      
       t.timestamps
     end
+
   end
 end

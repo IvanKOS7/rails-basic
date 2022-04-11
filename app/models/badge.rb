@@ -1,16 +1,7 @@
 class Badge < ApplicationRecord
-  ROOT_ENDPOINT = "https://img.shields.io/static/v1?"
+  BADGE_TYPES = ["first_try", "level_passed", "category_passed"]
 
-
-  has_and_belongs_to_many :users
-  # { label: "hello jjjjb",
-  #   message: "Jojojo",
-  #   color: "green",
-  #   logoColor: "gold",
-  #    logo: "streamlit"}
-  #after_action
-   #full_url = "https://img.shields.io/static/v1?logo="streamlit"&logoColor="gold"&color=#{badge.color}&label=#{badge.label}&message=#{badge.message}"
-
-
+  has_many :user_badges
+  has_many :users, through: :user_badges
 
 end

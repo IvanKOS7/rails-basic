@@ -18,6 +18,11 @@
 
   <%= form.label :color %>
   <%= form.color_field :color %>
+
+
+
+  <%= form.select :badge_type, Badge::BADGE_TYPES %>
+
   <%= form.submit%>
 
 

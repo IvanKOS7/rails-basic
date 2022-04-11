@@ -25,7 +25,7 @@ class ShieldsService
       request.params = params
     end
   end
-
+  
 
   def setup_http_client
     Faraday.new(url: ROOT_ENDPOINT)

@@ -2,4 +2,7 @@
 
   <td><%= image_tag badge.full_url %></td>
   <td> <%= link_to 'update', edit_admin_badge_path(badge) %></td>
+  <td>
+    <%= link_to 'delete', admin_badge_path(badge), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
 </tbody>

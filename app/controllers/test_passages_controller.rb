@@ -16,6 +16,8 @@ class TestPassagesController < ApplicationController
      end
 
      if @test_passage.completed?
+       @test_passage.test_passed? ? @test_passage.update(test_passed: true) : @test_passage.update(test_passed: false)
+       @test_passage.select_badge_attributes
        TestsMailer.completed_test(@test_passage).deliver_now
        redirect_to result_test_passage_path(@test_passage)
      else
@@ -43,4 +45,5 @@ class TestPassagesController < ApplicationController
    def set_test_passage
      @test_passage = TestPassage.find(params[:id])
    end
+
 end

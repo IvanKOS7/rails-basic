@@ -1,0 +1,5 @@
+
+
+  <%= image_tag badge.full_url %>
+
+  X<%= current_user.badges.ids.sort.select {|a| a == badge.id}.count %>
