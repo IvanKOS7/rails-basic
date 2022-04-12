@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2022_04_11_153604) do
     t.string "color"
     t.string "label"
     t.string "message"
+    t.string "badge_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "badge_type"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -129,4 +129,6 @@ ActiveRecord::Schema.define(version: 2022_04_11_153604) do
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
 end

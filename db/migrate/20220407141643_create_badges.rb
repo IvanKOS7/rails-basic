@@ -6,7 +6,7 @@ class CreateBadges < ActiveRecord::Migration[6.1]
       t.string :color
       t.string :label
       t.string :message
-      
+      t.string :badge_type
       t.timestamps
     end
 

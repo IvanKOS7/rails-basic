@@ -3,10 +3,14 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [ :feedback ]
   before_action :set_locale
   helper_method :set_cookie_last_path
-
+  include ActionController::Live
   def default_url_options
      { :lang => I18n.default_locale != I18n.locale ? I18n.locale : nil }
   end
+
+  def stream
+   
+ end
 
   private
 

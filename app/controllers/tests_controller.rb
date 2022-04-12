@@ -5,6 +5,7 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.published_tests
+
   end
 
   def start
