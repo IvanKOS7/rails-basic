@@ -16,8 +16,8 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: "Test"
   has_many :gists, dependent: :destroy
 
-  has_many :user_badges
-  has_many :badges, through: :user_badges
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges, dependent: :destroy
 
   def find_user_tests_by_level(level)
     pp tests.find_by("tests.level = ?", level)
@@ -27,14 +27,7 @@ class User < ApplicationRecord
      test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
-  def badge_count
-  end
-
   def admin?
     self.is_a?(Admin)
   end
-
-
-  scope :same_badges, -> { where(level: 0..1) }
-
 end

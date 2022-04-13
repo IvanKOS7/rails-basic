@@ -33,7 +33,7 @@ class Admin::BadgesController < Admin::BaseController
   def update
     shield_service = ShieldsService.new(badge_params)
     response = shield_service.call
-    #byebug
+
     if @badge.update(badge_params)
       @badge.update(full_url: response.env.url)
       #@tests.badges&.push(@badge)
@@ -65,7 +65,7 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:name, :color, :label, :message, :badge_type)
+    params.require(:badge).permit(:name, :color, :label, :message, :badge_type, :type_param)
   end
 
 end

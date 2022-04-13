@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2022_04_11_153604) do
     t.string "label"
     t.string "message"
     t.string "badge_type"
+    t.string "type_param"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,3 +1,6 @@
+<div class="form-group">
+
+
 <%= form_with model: [:admin, @badge] do |form| %>
 <%= render 'shared/errors', resource: @badge %>
 <p>
@@ -15,17 +18,21 @@
   <p>
     <%= @badge.full_url %>
   </p>
-
+<p>
   <%= form.label :color %>
   <%= form.color_field :color %>
+</p>
+   <%= form.label :badge_type %><br>
+   <%= form.select :badge_type, Badge::BADGE_TYPES%>
 
 
 
-  <%= form.select :badge_type, Badge::BADGE_TYPES %>
+   <%= form.label :type_param %>
+   <%= form.text_field :type_param, id: :type_param %>
 
-  <%= form.submit%>
-
+   <%= form.submit %>
 
 <% end %>
 
 <%= link_to t('.back'), admin_badges_path %>
+</div>
