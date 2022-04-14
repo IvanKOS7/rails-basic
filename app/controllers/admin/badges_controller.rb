@@ -36,7 +36,6 @@ class Admin::BadgesController < Admin::BaseController
 
     if @badge.update(badge_params)
       @badge.update(full_url: response.env.url)
-      #@tests.badges&.push(@badge)
       redirect_to edit_admin_badge_path
     else
       render :edit

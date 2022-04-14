@@ -22,15 +22,15 @@
   <%= form.label :color %>
   <%= form.color_field :color %>
 </p>
-   <%= form.label :badge_type %><br>
-   <%= form.select :badge_type, Badge::BADGE_TYPES%>
+
+  <%= form.label :badge_type %>
+  <%= form.select :badge_type, Badge::BADGE_TYPES %>
 
 
 
-   <%= form.label :type_param %>
-   <%= form.text_field :type_param, id: :type_param %>
-
-   <%= form.submit %>
+  <%= form.label :type_param %>
+  <%= form.text_field :type_param, id: :type_param %>
+  <%= form.submit %>
 
 <% end %>
 
