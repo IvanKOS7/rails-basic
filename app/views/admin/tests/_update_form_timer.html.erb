@@ -1,0 +1,9 @@
+
+
+
+  <%= form_with model: [:admin, test], url: admin_timer_path(test.timer.id), class: "form" do |form| %>
+    <%= form.text_field :timer_value %>
+      <%= form.label :seconds%>
+      <%= form.button "Update", data: { confirm: "Are you sure?" }, class: 'btn btn-primary mt-2' %>
+
+    <% end %>

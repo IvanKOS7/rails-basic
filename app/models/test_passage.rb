@@ -40,7 +40,12 @@ class TestPassage < ApplicationRecord
   def test_passed?
     self.percent >= PASSED_PERCENT
   end
-  
+
+  def dead_line
+    (self.created_at + self.test.timer.timer_value).utc.iso8601 if self.test.timer
+  end
+
+
   private
 
   def before_validation_set_first_question

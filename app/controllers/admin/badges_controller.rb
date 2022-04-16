@@ -15,9 +15,9 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def create
-      @badge = Badge.new(badge_params)
-      shield_service = ShieldsService.new(badge_params)
-      response = shield_service.call
+    @badge = Badge.new(badge_params)
+    shield_service = ShieldsService.new(badge_params)
+    response = shield_service.call
     if @badge.save
       @badge.update(full_url: response.env.url)
       redirect_to admin_badges_path

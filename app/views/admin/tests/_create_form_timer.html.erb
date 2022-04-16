@@ -1,0 +1,8 @@
+
+
+
+  <%= form_with model: [:admin, test], url: admin_test_timers_path(test),method: :create, local: true, class: "form" do |form| %>
+    <%= form.text_field :timer_value %>
+      <%= form.label :seconds%>
+      <%= form.submit 'Create Timer', class: 'btn btn-success mt-2' %>
+    <% end %>
