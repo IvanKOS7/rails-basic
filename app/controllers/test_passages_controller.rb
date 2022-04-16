@@ -9,8 +9,8 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-
-   if @test_passage.answer_choosed?(params[:answer_ids])
+   #сабмитим ответ и здесь проверяем условия какие-то
+   if @test_passage.answer_choosed?(params[:answer_ids]) || @test_passage.time_is_over?
      @test_passage.accept!(params[:answer_ids])
    else
      flash.now[:alert] = t('.failure')

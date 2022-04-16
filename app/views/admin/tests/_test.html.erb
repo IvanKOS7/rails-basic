@@ -9,13 +9,8 @@
   <td><%= test.questions.count %></td>
 
   <td>
-
-    <% if  test.timer.nil? %>
-     <%= render 'create_form_timer', test: test == @test ? @test : test %>
-    <% else %>
-        <%= ActiveSupport::Duration.build(test.timer.timer_value.to_i).inspect  %>
-         <%= render 'update_form_timer', test: test == @test ? @test : test %>
-         <%= link_to 'delete_timer', admin_timer_path(test.timer), method: :delete,local: true, data: { confirm: 'Are you sure?' } %>
+    <% if  test.timer_value != nil %>
+      <%= ActiveSupport::Duration.build(test.timer_value).inspect  %>
     <% end %>
   </td>
 

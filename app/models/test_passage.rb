@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
-      self.correct_questions += 1
+        self.correct_questions += 1
     end
     save!
   end
@@ -22,7 +22,9 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    if answer_ids != nil
+      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    end
   end
 
   def correct_answers
@@ -42,7 +44,11 @@ class TestPassage < ApplicationRecord
   end
 
   def dead_line
-    (self.created_at + self.test.timer.timer_value).utc.iso8601 if self.test.timer
+    (self.created_at + self.test.timer_value).utc.iso8601 if self.test.timer_value
+  end
+
+  def time_is_over?
+    self.dead_line < Time.now
   end
 
 

@@ -3,6 +3,7 @@ document.addEventListener('turbolinks:load', function () {
 
       let time = document.querySelector('.timer')
       if (time) { const deadline = new Date(time.dataset.overTime);
+      let form = document.querySelector('form');
 
       // id таймера
       let timerId = null;
@@ -15,7 +16,7 @@ document.addEventListener('turbolinks:load', function () {
         const diff = deadline - new Date();
         if (diff <= 0) {
           clearInterval(timerId);
-          window.location.replace(window.location.href + '/result');
+          form.submit();
         }
         const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
         const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
