@@ -47,6 +47,8 @@ gem "octokit"
 gem "octicons_helper"
 #random text generator
 gem 'faker'
+#svg reader
+gem 'inline_svg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

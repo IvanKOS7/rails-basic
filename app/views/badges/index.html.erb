@@ -1,0 +1,11 @@
+
+<div class="text-center">
+  <%= image_tag 'https://www.svgrepo.com/show/213882/avatar-user.svg', class: 'image-fluid', width: 100 %>
+<h1>User Badges</h1>
+
+    <%= render current_user.badges.uniq %>
+
+<h2>Available badges</h2>
+<%= render partial: 'admin/badges/badge0', collection: @badges %>
+</table>
+</div>

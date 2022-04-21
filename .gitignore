@@ -87,3 +87,5 @@ lib*.pc
 /Debug/
 /Release/
 /tmp_install/
+.DS_Store
+.DS_Store

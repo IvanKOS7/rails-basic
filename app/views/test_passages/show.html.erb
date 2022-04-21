@@ -1,8 +1,17 @@
+
+
+<%= content_tag :div,
+                 class: 'timer',
+                 data: { over_time: @test_passage.dead_line } do %>
+      <%= render 'timer' %>
+<% end %>
+
 <h2> <%= t('.header', title: @test_passage.test.title) %></h2>
   <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post %>
 <%= content_tag :div, class: 'progress' do %>
   <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 7%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"><%= @test_passage.percent %>%</div>
 <% end %>
+
 <b>
   <%= @test_passage.current_question.body %>
 </b>

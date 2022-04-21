@@ -1,4 +1,6 @@
+<%= render inline: @badge %>
 <h1> <%= t('.header') %></h1>
+<p> <%= link_to 'badges', admin_badges_path %></p>
 <p> <%= link_to t('.new_test'), new_admin_test_path %></p>
 <%= render 'shared/errors', resource: @test  %>
 <table class="table">
@@ -10,6 +12,7 @@
     </td>
     <td><%= t('.level') %></td>
     <td><%= t('.questions_amount') %></td>
+    <th>Timer</th>
     <td colspan="4" class="text-center"><%= t('.actions') %></td>
     <td colspan="2"> <%= t('.publication') %></td>
   </tr>

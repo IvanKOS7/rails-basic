@@ -7,6 +7,13 @@
 
   <td> <%= test_level(test) %> </td>
   <td><%= test.questions.count %></td>
+
+  <td>
+    <% if  test.timer_value != nil %>
+      <%= ActiveSupport::Duration.build(test.timer_value).inspect  %>
+    <% end %>
+  </td>
+
   <td class="align-middle"><%= link_to t('.edit'), edit_admin_test_path(test),
                                                    class: 'form-inline-link',
                                                     data: { test_id: test.id } %>

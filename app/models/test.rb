@@ -9,8 +9,9 @@ class Test < ApplicationRecord
   validates :title, presence: true, uniqueness: {scope: :level}
   validates :level, numericality: { greater_than_or_equal_to: 0 }
 
+
   def self.tests_categories_sort(category_name)
-    all_test_with_category.order(title: :desc).where("categories.title like ? ", category_name).pluck(:title)
+    all_test_with_category.order(title: :desc).where("categories.title like ? ", category_name).ids
   end
 
   scope :simple_level, -> { where(level: 0..1) }

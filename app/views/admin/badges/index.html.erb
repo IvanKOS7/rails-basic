@@ -1,0 +1,13 @@
+<%= current_time %>
+<h1>Badges Panel</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <td> Badge</td>
+      <td> Actions</td>
+      </tr>
+  </thead>
+  <%= link_to 'new', new_admin_badge_path %>
+  <%= render @badges %>
+
+</table>
