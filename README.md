@@ -1,30 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Description:
 
-Things you may want to cover:
+Educational project web application tests and quizzes
 
+https://test-guru-test.herokuapp.com
+
+*may not be available
+======================================
 
 * Ruby version
-  2.7.3
+  2.7.5
+* Rails version
+  6.*.*
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * Real-world concepts:
 1.User (Select and passes tests)
 2.Admin (Create tests and redact)
 3.Test (is a test with different parameters, interact with users through tests)
-4.Statistic (Admin see the result of completed surveys by parameters)
+4.TestPassage
+5.etc...
