@@ -2,7 +2,7 @@
 
 Description:
 
-Educational project web application tests and quizzes
+Educational project - web application tests and quizzes
 
 https://test-guru-test.herokuapp.com
 
