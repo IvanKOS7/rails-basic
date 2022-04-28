@@ -4,7 +4,7 @@ Description:
 
 Educational project - web application tests and quizzes
 
-https://test-guru-test.herokuapp.com
+https://test-guru-test.herokuapp.com/gurus/login
 
 *may not be available
 ======================================
